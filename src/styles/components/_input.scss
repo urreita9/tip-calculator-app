@@ -1,0 +1,32 @@
+.input__container {
+	display: flex;
+	flex-direction: column;
+	margin: 10px auto;
+}
+.input__label {
+	color: $darkGrayishCyan;
+	font-weight: 500;
+}
+.input {
+	color: $veryDarkCyan;
+	font-weight: 700;
+	font-size: 1.2rem;
+	background-color: $lightGrayishCyan;
+	border: none;
+	border-radius: 5px;
+	text-align: end;
+	&:focus {
+		outline-color: $primary;
+		box-shadow: 0 0 2px;
+	}
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+	-moz-appearance: textfield;
+}

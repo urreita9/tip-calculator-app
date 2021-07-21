@@ -1,0 +1,77 @@
+.buttons__section {
+	display: flex;
+	flex-direction: column;
+	margin: 10px auto;
+	span {
+		color: $darkGrayishCyan;
+	}
+}
+.buttons__container {
+	width: 100%;
+	height: fit-content;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+}
+.buttons__input {
+	color: $veryDarkCyan;
+	width: 85%;
+	border: none;
+	text-align: end;
+	margin: 5px auto;
+	border-radius: 5px;
+	font-weight: 700;
+	background-color: $lightGrayishCyan;
+	padding-right: 5%;
+	font-size: 1.4rem;
+	&:focus {
+		outline-color: $primary;
+		box-shadow: 0 0 2px;
+	}
+}
+.button {
+	border: none;
+	width: 90%;
+	display: flex;
+	padding: 5px 50px;
+	align-content: center;
+	justify-content: center;
+	margin: 5px auto;
+	background-color: $veryDarkCyan;
+	color: $white;
+	border-radius: 5px;
+	font-weight: 700;
+	font-size: 1.4rem;
+	&:hover {
+		background-color: $primary;
+		opacity: 0.8;
+		color: $veryDarkCyan;
+		cursor: pointer;
+	}
+	&:focus {
+		background-color: $primary;
+		color: $veryDarkCyan;
+	}
+}
+
+@media (min-width: 375px) {
+	.buttons__container {
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+	}
+	.buttons__section {
+		width: 100%;
+	}
+	.button {
+		border: none;
+		width: 30%;
+		display: flex;
+		margin: 5px auto;
+		padding: 5px 30px;
+		// padding: 5px 50px;
+
+		border-radius: 5px;
+		font-weight: 700;
+		font-size: 0.8rem;
+	}
+}
