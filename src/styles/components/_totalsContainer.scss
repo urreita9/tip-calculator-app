@@ -42,4 +42,8 @@
 	border-radius: 5px;
 	width: 75%;
 	padding: 10px 50px;
+	cursor: pointer;
+	&:hover {
+		opacity: 0.9;
+	}
 }

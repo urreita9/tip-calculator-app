@@ -10,7 +10,7 @@
 		margin-bottom: 10%;
 		opacity: 0.3;
 		position: absolute;
-		top: 30px;
+		top: 5%;
 	}
 	.calc__container {
 		width: 90vw;
@@ -32,6 +32,16 @@
 		flex-direction: column;
 		display: flex;
 	}
+	.iconDollar {
+		position: absolute;
+		left: 18%;
+		top: 37.9%;
+	}
+	.iconPerson {
+		position: absolute;
+		left: 17.5%;
+		top: 62%;
+	}
 	.buttons__container {
 		grid-template-columns: repeat(3, 1fr);
 		grid-template-rows: repeat(2, 40px);
@@ -45,12 +55,11 @@
 	.buttons__input {
 		font-size: 2vw;
 	}
-	.input__label {
-		font-size: 0.9rem;
+	.input__label,
+	.buttons__title {
+		font-size: 0.7rem;
 	}
-	.buttons__section span {
-		font-size: 0.9rem;
-	}
+
 	.total__text {
 		.total__text__subtitle {
 			font-size: 0.6rem;
@@ -72,10 +81,37 @@
 		justify-content: center;
 	}
 }
+// @media (min-height: 400px) {
+// 	.title {
+// 		top: 13px;
+// 	}
+// }
 @media (min-width: 779px) {
 	.totals__container {
 		.total__number {
 			font-size: 1.9rem;
 		}
+	}
+	.total__text {
+		.total__text__subtitle {
+			font-size: 1rem;
+		}
+		p {
+			font-size: 1rem;
+		}
+	}
+	.input__label,
+	.buttons__title {
+		font-size: 1rem;
+	}
+	.iconDollar {
+		position: absolute;
+		left: 17.5%;
+		top: 37.3%;
+	}
+	.iconPerson {
+		position: absolute;
+		left: 17.5%;
+		top: 63.5%;
 	}
 }

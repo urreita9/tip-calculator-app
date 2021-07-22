@@ -12,7 +12,7 @@ export const Total = ({ total, totalText }) => {
 			</div>
 
 			<span className='total__number'>
-				{checkIsNan(total) ? "0.00" : `$${total}`}
+				{checkIsNan(total) ? "$0.00" : `$${total}`}
 			</span>
 		</div>
 	);

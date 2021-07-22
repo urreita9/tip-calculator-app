@@ -8,7 +8,7 @@ export const ButtonsContainer = ({
 	const percentages = [5, 10, 15, 25, 50];
 	return (
 		<div className='buttons__section w-90'>
-			<span>Select Tip %</span>
+			<span className='buttons__title'>Select Tip %</span>
 			<div className='buttons__container'>
 				{percentages.map((percentage, i) => {
 					return (
