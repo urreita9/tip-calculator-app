@@ -10,7 +10,7 @@ export const ButtonsContainer = ({
 	return (
 		<div className='buttons__section w-90'>
 			<div className='label__container'>
-				<span className='buttons__title'>Select Tip %</span>
+				<span className='input__label'>Select Tip %</span>
 				{error ? <span className='buttons__error'>{error}</span> : null}
 			</div>
 

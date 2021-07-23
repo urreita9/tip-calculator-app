@@ -119,7 +119,23 @@ export const Container = () => {
 					<TotalsContainer {...totals} reset={reset} />
 				</div>
 			</div>
-			<footer></footer>
+			<footer className='footer'>
+				<a href='https://github.com/urreita9/tip-calculator-app.git'>GitHub</a>
+
+				<ul>
+					<li>👇Other projects👇</li>
+					<li>
+						<a href='https://patmahomes-store-coderhouse.web.app/'>
+							PatMahomes Clone Store (React)
+						</a>
+					</li>
+					<li>
+						<a href='https://urreita9.github.io/giphos/'>
+							Giphos (Vanilla JS-spanish)
+						</a>
+					</li>
+				</ul>
+			</footer>
 		</div>
 	);
 };
