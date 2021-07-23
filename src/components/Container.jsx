@@ -10,9 +10,16 @@ const inititalStateInputs = {
 	tip: "",
 	customTip: "",
 };
+const initialStateError = {
+	billError: "",
+	peopleError: "",
+	tipError: "",
+};
+
 export const Container = () => {
 	const [inputsState, setInputsState] = useState(inititalStateInputs);
 	const [totals, setTotals] = useState(initialStateTotals);
+	const [error, setError] = useState(initialStateError);
 
 	useEffect(() => {
 		calculateTips();
@@ -42,6 +49,7 @@ export const Container = () => {
 	};
 
 	const { bill, people, tip, customTip } = inputsState;
+	const { billError, peopleError, tipError } = error;
 
 	// Total state
 
@@ -51,8 +59,15 @@ export const Container = () => {
 		const tipNum = parseFloat(tip) / 100;
 		const customTipNum = parseFloat(customTip) / 100;
 
-		if (billNum <= 0 || (tipNum || customTipNum) <= 0 || peopleNum <= 0) {
-			return setTotals(initialStateTotals);
+		if (billNum <= 0) {
+			return setError({ ...error, billError: "Can´t be zero or less" });
+		} else if (peopleNum <= 0) {
+			return setError({ ...error, peopleError: "Can´t be zero or less" });
+		} else if (customTipNum < 0) {
+			return setError({
+				...error,
+				tipError: "Can´t less than zero",
+			});
 		} else {
 			const calcTips =
 				tipNum > 0
@@ -63,7 +78,7 @@ export const Container = () => {
 
 			const calcTipsFixed = calcTips.toFixed(2);
 			const calcTotalsFixed = calcTotals.toFixed(2);
-
+			setError(initialStateError);
 			return setTotals({
 				tipAmount: calcTipsFixed,
 				totalAmount: calcTotalsFixed,
@@ -80,23 +95,31 @@ export const Container = () => {
 			</div>
 			<div className='calc__container'>
 				<div className='select__section'>
-					<Input title='Bill' handleChange={handleBillChange} value={bill} />
+					<Input
+						title='Bill'
+						handleChange={handleBillChange}
+						value={bill}
+						error={billError}
+					/>
 					<ButtonsContainer
 						handleChange={handleTipChange}
 						tip={tip}
 						handleCustomTipChange={handleCustomTipChange}
 						customTip={customTip}
+						error={tipError}
 					/>
 					<Input
 						title='Number of People'
 						handleChange={handlePeopleChange}
 						value={people}
+						error={peopleError}
 					/>
 				</div>
 				<div className='totals__section'>
 					<TotalsContainer {...totals} reset={reset} />
 				</div>
 			</div>
+			<footer></footer>
 		</div>
 	);
 };

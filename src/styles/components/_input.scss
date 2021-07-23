@@ -7,15 +7,32 @@
 	color: $darkGrayishCyan;
 	font-weight: 500;
 }
+.icon__container {
+	height: 1px;
+}
 .iconDollar {
-	position: absolute;
-	left: 8%;
-	top: 14.6%;
+	position: relative;
+	left: 3%;
+	top: 6px;
 }
 .iconPerson {
-	position: absolute;
-	left: 8%;
-	top: 40.6%;
+	position: relative;
+	left: 3%;
+	top: 6px;
+}
+.label__container {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+
+	span {
+		color: $error;
+		font-size: 1vw;
+	}
+	.buttons__error {
+		color: $error;
+		font-size: 1vw;
+	}
 }
 .input {
 	color: $veryDarkCyan;
@@ -25,8 +42,16 @@
 	border: none;
 	border-radius: 5px;
 	text-align: end;
+}
+.focus {
 	&:focus {
 		outline-color: $primary;
+		box-shadow: 0 0 2px;
+	}
+}
+.errorFocus {
+	&:focus {
+		outline-color: $error;
 		box-shadow: 0 0 2px;
 	}
 }

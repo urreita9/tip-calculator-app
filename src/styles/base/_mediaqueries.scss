@@ -32,16 +32,7 @@
 		flex-direction: column;
 		display: flex;
 	}
-	.iconDollar {
-		position: absolute;
-		left: 18%;
-		top: 37.9%;
-	}
-	.iconPerson {
-		position: absolute;
-		left: 17.5%;
-		top: 62%;
-	}
+
 	.buttons__container {
 		grid-template-columns: repeat(3, 1fr);
 		grid-template-rows: repeat(2, 40px);
@@ -57,7 +48,7 @@
 	}
 	.input__label,
 	.buttons__title {
-		font-size: 0.7rem;
+		font-size: 1.5vw;
 	}
 
 	.total__text {
@@ -81,11 +72,7 @@
 		justify-content: center;
 	}
 }
-// @media (min-height: 400px) {
-// 	.title {
-// 		top: 13px;
-// 	}
-// }
+
 @media (min-width: 779px) {
 	.totals__container {
 		.total__number {
@@ -102,16 +89,6 @@
 	}
 	.input__label,
 	.buttons__title {
-		font-size: 1rem;
-	}
-	.iconDollar {
-		position: absolute;
-		left: 17.5%;
-		top: 37.3%;
-	}
-	.iconPerson {
-		position: absolute;
-		left: 17.5%;
-		top: 63.5%;
+		font-size: 1.5vw;
 	}
 }

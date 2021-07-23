@@ -5,10 +5,12 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
-	background-color: $primary;
+	background-color: darken($lightGrayishCyan, 30%);
 }
 .title {
-	opacity: 0.3;
+	h2 {
+		color: adjust-hue($veryDarkCyan, 80deg);
+	}
 }
 .calc__container {
 	width: 100%;

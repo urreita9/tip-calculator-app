@@ -4,11 +4,16 @@ export const ButtonsContainer = ({
 	handleChange,
 	handleCustomTipChange,
 	customTip,
+	error,
 }) => {
 	const percentages = [5, 10, 15, 25, 50];
 	return (
 		<div className='buttons__section w-90'>
-			<span className='buttons__title'>Select Tip %</span>
+			<div className='label__container'>
+				<span className='buttons__title'>Select Tip %</span>
+				{error ? <span className='buttons__error'>{error}</span> : null}
+			</div>
+
 			<div className='buttons__container'>
 				{percentages.map((percentage, i) => {
 					return (
@@ -21,9 +26,10 @@ export const ButtonsContainer = ({
 						</button>
 					);
 				})}
+
 				<input
 					type='number'
-					className='buttons__input'
+					className={`buttons__input ${error ? "errorFocus" : "focus"}`}
 					placeholder='Custom'
 					value={customTip}
 					onChange={(e) => handleCustomTipChange(e.target.value)}
